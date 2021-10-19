@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,8 +9,14 @@ import { Component } from '@angular/core';
 export class HomePage {
   row1: string[] = ['Produits'];
   row2: string[] = ['Bateau','Restaurant'];
-  row3: string[] = ['Promotion','Contact'];
+  row3: string[] = ['Promotion','Contacte'];
+  fullPath: string = '';
 
-  constructor() {}
+  goToPath(pathName :string){
+    this.fullPath = "/" + pathName.toLowerCase();
+    this.router.navigate([this.fullPath]);
+  }
+
+  constructor(private router: Router) {}
 
 }
