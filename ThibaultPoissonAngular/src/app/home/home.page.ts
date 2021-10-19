@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  row1: string[] = ['Produits'];
+  row2: string[] = ['Bateau','Restaurant'];
+  row3: string[] = ['Promotion','Contact'];
 
   constructor() {}
 
