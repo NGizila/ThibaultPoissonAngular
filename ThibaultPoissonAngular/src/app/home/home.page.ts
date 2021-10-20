@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class HomePage {
   row1: string[] = ['Produits'];
   row2: string[] = ['Bateau','Restaurant'];
-  row3: string[] = ['Promotion','Contacte'];
+  row3: string[] = ['Recettes','Contacte'];
   fullPath: string = '';
 
   goToPath(pathName :string){
