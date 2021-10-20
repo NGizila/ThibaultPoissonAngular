@@ -3,7 +3,13 @@
     <ion-title>produits</ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content>
-
+<ion-content padding>
+  <ion-title>Choissiez vos produits</ion-title>
+  <ion-list>
+    <ion-item *ngFor="let item of productList | keyvalue " button (click)="redirect(item.value)">
+        <ion-img *ngIf="item.value.name" style="width: 5%" src="assets/icon/poulpe.png" item-start></ion-img>
+        <ion-label *ngIf="item.value.name"  item-end> {{item.value.name}} </ion-label>
+        <ion-label *ngIf="item.value.name"  item-end> {{item.value.price}} </ion-label>
+     </ion-item>
+  </ion-list>
 </ion-content>
