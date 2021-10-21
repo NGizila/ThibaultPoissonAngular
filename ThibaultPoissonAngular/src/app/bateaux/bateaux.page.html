@@ -1,33 +1,32 @@
-<ion-content [fullscreen]="true">
-  <ion-header [translucent]="true">
-    <ion-toolbar>
-      <ion-title>
-        Nos bateaux partenaires
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-title>Nos bateaux partenaires </ion-title>
-  <ion-text> Tout les eaux mènent a Thibault</ion-text>
-  <ion-text> 06.63.99.99.78 </ion-text>
-  <ion-text> lebateaudethibault@gmail.com </ion-text>
-  <ion-text> www.facebook.com/lebateaudethibault</ion-text>
+<ion-content class="background-image">
+  <div class="text-title">
+    <ion-text>Nos bateaux partenaires </ion-text>
+  </div>
+  <div class="text-description">
+  <ion-text><strong> Tout les eaux mènent a Thibault<br/></strong></ion-text>
+  <ion-text> 06.63.99.99.78<br/></ion-text>
+  <ion-text> lebateaudethibault@gmail.com<br/></ion-text>
+  <ion-text> www.facebook.com/lebateaudethibault<br/></ion-text>
+  </div>
+  <div>
   <ion-grid>
     <ion-col>
       <ion-row>
         <ion-col width-50 *ngFor="let row of row1">
-          <ion-button expand="full" size="default" color="light" (click)="goToBateauDescription(row)">{{row}}</ion-button>
+          <ion-button class="button-home" (click)="goToBateauDescription(row)">{{row}}</ion-button>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col width-50 *ngFor="let row of row2">
-          <ion-button expand="full" size="default" color="light" (click)="goToBateauDescription(row)">{{row}}</ion-button>
+          <ion-button class="button-home" (click)="goToBateauDescription(row)">{{row}}</ion-button>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col width-50 *ngFor="let row of row3">
-          <ion-button expand="full" size="default" color="light" (click)="goToBateauDescription(row)">{{row}}</ion-button>
+          <ion-button class="button-home" (click)="goToBateauDescription(row)">{{row}}</ion-button>
         </ion-col>
       </ion-row>
     </ion-col>
   </ion-grid>
+  </div>
 </ion-content>

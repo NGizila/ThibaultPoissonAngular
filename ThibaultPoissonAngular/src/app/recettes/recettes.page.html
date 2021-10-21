@@ -9,13 +9,11 @@
     www.facebook.com/lebateaudethibault</ion-text>
   </div>
   <ion-grid>
-  <ion-row>
-      <ion-col *ngFor="let item of recettes">
-        <ion-button class="row-button" (click)="getRecette(item)">
+      <ion-row *ngFor="let item of recettes">
+        <ion-button class="button-home" (click)="getRecette(item)">
           <ion-img src={{item.icon}} class="icon"></ion-img>
           <ion-text class="text-name">{{item.name}}</ion-text>
         </ion-button>
-      </ion-col>
-  </ion-row>
+      </ion-row>
   </ion-grid>
 </ion-content>
