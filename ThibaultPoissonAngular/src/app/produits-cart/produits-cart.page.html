@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-row>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="home" class="home-icon" start (click)="redirectHome()"></ion-icon>
+      </button>
+      <ion-title>Modifiez la quantité en tappant sur chaque produit</ion-title>
+      <button ion-button icon-only menuToggle (click)="redirect()">
+        <ion-icon name="cart" class="cart-icon" end></ion-icon>
+      </button>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item button *ngFor="let item of cartList | keyvalue" (click)="openModal(item.value)">
+      <ion-img style="width: 5%" src="assets/icon/poulpe.png" item-start></ion-img>
+      <ion-label item-start>{{item.value.name}}</ion-label>
+      <ion-label item-end> {{item.value.numberOfItems}} X {{item.value.price}} €</ion-label>
+      <ion-label item-end> {{itemPrice(item.value.numberOfItems,item.value.price)}} €</ion-label>
+    </ion-item>
+  </ion-list>
+    <ion-footer>
+
+        <ion-item>
+          <ion-col col col-7>
+            <ion-row>
+              <ion-title end>Total {{total()}} €</ion-title>
+            </ion-row>
+            <ion-row text-wrap>
+              <ion-text style="font-size: 13px;">
+                Lieu de livraison (choisir):
+                Bistrot des Gascos
+                26 Avenue de Tourville, 75007 Paris
+                 Date de livraison: 
+                Samedi 16 Mars, à partir de 9h.
+              </ion-text>
+            </ion-row>
+            <ion-row>
+              <ion-button (click)="validateOrder(total())" end>Valider</ion-button>
+            </ion-row>
+          </ion-col>
+            
+        </ion-item >
+       
+
+    </ion-footer>
+</ion-content>

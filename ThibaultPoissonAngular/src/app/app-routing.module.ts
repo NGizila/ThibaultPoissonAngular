@@ -16,6 +16,22 @@ const routes: Routes = [
     loadChildren: () => import('./recettes/recettes.module').then( m => m.RecettesPageModule)
   },
   {
+
+    path: 'produits',
+    loadChildren: () => import('./produits/produits.module').then( m => m.ProduitsPageModule)
+  },
+  {
+    path: 'produits-list',
+    loadChildren: () => import('./produits-list/produits-list.module').then( m => m.ProduitsListPageModule)
+  },
+  {
+    path: 'produits-cart',
+    loadChildren: () => import('./produits-cart/produits-cart.module').then( m => m.ProduitsCartPageModule)
+  },
+  {
+    path: 'modalpopup',
+    loadChildren: () => import('./modalpopup/modalpopup.module').then( m => m.ModalpopupPageModule)
+
     path: 'recettes-detail',
     loadChildren: () => import('./recettes-detail/recettes-detail.module').then( m => m.RecettesDetailPageModule)
   },
@@ -34,6 +50,7 @@ const routes: Routes = [
   {
     path: 'description-bateau',
     loadChildren: () => import('./description-bateau/description-bateau.module').then( m => m.DescriptionBateauPageModule)
+
   },
 ];
 
