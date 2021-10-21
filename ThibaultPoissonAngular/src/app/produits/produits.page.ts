@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
-import { BehaviorSubject } from 'rxjs';
 import * as JSONdata from "../../constants/produits.json";
 import { Cart } from '../models/Cart';
 
@@ -47,8 +46,7 @@ export class ProduitsPage implements OnInit {
         }
     }
   }
-    
-
+  
   getCounter(item:number){
     let counter = 0;
     this.itemData.forEach(element => {
@@ -59,8 +57,13 @@ export class ProduitsPage implements OnInit {
     return counter;
   }
 
-  redirect(item: any){
-    this.router.navigate(["produits-cart",item]); //,{state:{data:{...item}}}
+  redirect(){
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+        special: JSON.stringify(this.itemData)
+      }
+    };
+    this.router.navigate(['produits-cart'], navigationExtras); //,{state:{data:{...item}}}
   }
 
   ngOnInit() {

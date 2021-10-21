@@ -1,9 +1,22 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>produits-cart</ion-title>
+    <ion-row>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="home" class="home-icon" start></ion-icon>
+      </button>
+      <ion-title>Cart</ion-title>
+      <button ion-button icon-only menuToggle (click)="redirect()">
+        <ion-icon name="cart" class="cart-icon" end></ion-icon>
+      </button>
+    </ion-row>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-list  *ngFor="let item of cartList | keyvalue">
+    <ion-item>
+      <ion-label item-start>{{item.value.name}}</ion-label>
+      <ion-label item-end> {{item.value.numberOfItems}} X {{item.value.price}} $</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

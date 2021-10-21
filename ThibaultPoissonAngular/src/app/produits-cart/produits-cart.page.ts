@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-produits-cart',
@@ -8,14 +7,17 @@ import { BehaviorSubject } from 'rxjs';
   styleUrls: ['./produits-cart.page.scss'],
 })
 export class ProduitsCartPage implements OnInit {
-  private cart = [];
-  private cartCounter = {};
-  constructor(private activatedRoute: ActivatedRoute) { }
+  private cartList: any;
 
-  ngOnInit() {
-    this.activatedRoute.params.subscribe(product => {
-      console.log(product);
-   });
+  constructor(private activatedRoute: ActivatedRoute) { 
+    this.activatedRoute.queryParams.subscribe(params => {
+      if (params && params.special) {
+        this.cartList = JSON.parse(params.special);
+        console.log(this.cartList);
+      }
+    });
   }
+
+  ngOnInit() { }
 
 }
