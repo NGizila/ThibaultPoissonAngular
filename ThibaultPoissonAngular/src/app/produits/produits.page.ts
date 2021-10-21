@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
+import { BehaviorSubject } from 'rxjs';
 import * as JSONdata from "../../constants/produits.json";
-import { Products } from '../models/Products';
+import { Cart } from '../models/Cart';
 
 @Component({
   selector: 'app-produits',
@@ -8,19 +11,60 @@ import { Products } from '../models/Products';
   styleUrls: ['./produits.page.scss'],
 })
 export class ProduitsPage implements OnInit {
-
-  products: Products = new Products();
-  test: [] = [];
-  constructor() { }
+  
+  constructor(private router: Router,private modalCtrl: ModalController) { }
   productList: any;
+  cart: Cart = new Cart();
+  itemCounter = 0;
+  itemData = [];
 
-  redirect(item: string){
-    console.log(item);
+  manageItems(item: any){
+    let counter = 0;
+    let id_exists = false;
+    let simplecart: Cart = new Cart();
+
+    if(this.itemData.length < 1){
+      this.cart.id = item.id;
+      this.cart.name = item.name;
+      this.cart.numberOfItems = 1;
+      this.cart.price = item.price;
+      this.itemData.push(this.cart);
+    }
+    else{
+      this.itemData.forEach(element => {
+        if(item.id == element.id){
+          id_exists = true;
+          counter = element.numberOfItems + 1;
+          element.numberOfItems = element.numberOfItems +1;
+        }});
+  
+      if(id_exists==false){
+          simplecart.id = item.id;
+          simplecart.name = item.name;
+          simplecart.numberOfItems = 1;
+          simplecart.price = item.price;
+          this.itemData.push(simplecart);
+        }
+    }
+  }
+    
+
+  getCounter(item:number){
+    let counter = 0;
+    this.itemData.forEach(element => {
+      if(item == element.id){
+        counter = element.numberOfItems;
+      }
+    })
+    return counter;
+  }
+
+  redirect(item: any){
+    this.router.navigate(["produits-cart",item]); //,{state:{data:{...item}}}
   }
 
   ngOnInit() {
     this.productList = JSONdata;
-
   }
 
 }
