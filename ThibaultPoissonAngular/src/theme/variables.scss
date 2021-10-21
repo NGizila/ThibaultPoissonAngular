@@ -1,8 +1,49 @@
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
 
+
+
 /** Ionic CSS Variables **/
 :root {
+  
+  .auth-pane{
+    background-image: url('../images/background.png') no-repeat center center cover;
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    background-size: 100%;
+  }
+
+  /** button color **/
+  --ion-color-background-button : rgba(0,0,0,.3) ;
+  --ion-color-color-button : #FFFFFF;
+
+
+
+/** fonts **/
+  --ion-font-family: "Party LET", "Savoye Let", "Hoefler Text";
+
+/**************/
+/* COLOR BANK */
+/**************/
+
+/* BLUE THIBAULT */
+  --blue-thibault-color: rgba(30,144,255,0.6); 
+/* DESERT SAND */
+  --desert-sand-color: #EDC9AF;   
+/* DARK SAND */
+  --dark-sand-color: #6B5A38;   
+/* BEACH SAND */
+  --beach-sand-color: #FAC09A;  
+/* SAND */
+   background-color: #C2B280;   
+/* LIGHT SUNNY YELLOW */
+  --light-sunny-yellow-color: #FFFC7F; 
+/* BRIGHT SUN LEMON */
+  --bright-sun-lemon-color: #FFE13F; 
+
+
+
+
   /** primary **/
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;
@@ -231,6 +272,9 @@
 
     --ion-tab-bar-background: #1f1f1f;
 
-    --ion-card-background: #1e1e1e;
-  }
+
+
+   // --ion-card-background: #1e1e1e;
+
+  } 
 }

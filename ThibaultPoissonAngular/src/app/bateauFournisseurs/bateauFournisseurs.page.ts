@@ -3,13 +3,14 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  templateUrl: 'bateauFournisseurs.page.html',
+  styleUrls: ['bateauFournisseurs.page.scss'],
 })
-export class HomePage {
-  row1: string[] = ['Produits'];
-  row2: string[] = ['Les Bateaux','Restaurant'];
-  row3: string[] = ['Promotion','Contacts'];
+export class bateauFournisseurs {
+    //noms de bateau a chaque bouton
+  row1: string[] = ['De la Brise','Saphir'];
+  row2: string[] = ['Gast Micher','Aquilon'];
+  row3: string[] = ['Contact','Contact'];
   fullPath: string = '';
 
   goToPath(pathName :string){

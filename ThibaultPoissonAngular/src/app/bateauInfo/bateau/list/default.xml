@@ -1,0 +1,26 @@
+<!--
+ * ***********************************************************
+ * TIG - Le bateau de Thibault.
+ * Copyright (C) 2018 <Binh-Minh.Bui-Xuan@ens-lyon.org>.
+ * GPL version>=3 <http://www.gnu.org/licenses/>.
+ * $Id: BateauThibault/app/src/views/bateau/list/default.xml updated 2020-03-03 buixuan.
+ * *********************************************************** 
+ -->
+<Page loaded="loaded" swipe="swipeListenner">
+  <StackLayout orientation="vertical" >
+
+    <GridLayout row="0" col="0" columns="*" rows="auto,auto,*" class="infocom" >
+      <Label  row="0" col="0" class="namecom" text="Bateau XYZ" />
+      
+      <Image  row="1" col="0" class="descriptionImage" src="res://poulpe" />
+      
+      <Label  row="2" col="0" class="descriptioncom" text="XXX YYY ZZZ " />
+    </GridLayout>
+    
+    <GridLayout row="1" col="1" columns="*" rows="auto,*,auto" class="infocom" >
+      <Label  row="0" col="0" class="aboutus" text="Qu'il est chaud le soleil&#x000a;Quand nous sommes en vacances&#x000a;Y a d' la joie, des hirondelles&#x000a;C'est le sud de la France&#x000a;Papa bricole au garage&#x000a;Maman lit dans la chaise longue&#x000a;Dans ce joli paysage&#x000a;Moi, je me balade en tongs&#x000a;&#x000a;Que de bonheur!&#x000a;Que de bonheur!"/>
+      <Label row="2" colspan="1" class="bottombar" text="Powered by Bik Inc." />
+    </GridLayout>
+  
+  </StackLayout>
+</Page>

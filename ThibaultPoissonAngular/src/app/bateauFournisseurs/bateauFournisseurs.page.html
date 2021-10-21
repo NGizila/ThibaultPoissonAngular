@@ -1,0 +1,58 @@
+
+
+<ion-header>
+    <ion-toolbar>
+      <ion-title>bateauxFournisseurs</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true">
+    <ion-card (swipe)="swipeEvent($event)">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large">Page d'accueil</ion-title>
+      </ion-toolbar>
+    </ion-header>
+  
+    <div id="container">
+      <ion-grid>
+        <ion-col *ngFor="let row of column 1">
+          <ion-row *ngFor="let row of row1">
+            <ion-col width-50>
+              <ion-button expand="full" size="deault" color="light" (click)="goToPath(row)">{{row}}</ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col width-50 *ngFor="let row of row2">
+              <ion-button expand="full" size="deault" color="light">{{row}}</ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col width-50 *ngFor="let row of row3">
+              <ion-button expand="full" size="deault" color="light">{{row}}</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+
+        <ion-col *ngFor="let row of column 2">
+            <ion-row *ngFor="let row of row1">
+              <ion-col width-50>
+                <ion-button  expand="full" size="deault" color="light" (click)="goToPath(row)">{{row}}</ion-button>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col width-50 *ngFor="let row of row2">
+                <ion-button expand="full" size="deault" color="light">{{row}}</ion-button>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col width-50 *ngFor="let row of row3">
+                <ion-button expand="full" size="deault" color="light">{{row}}</ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+      </ion-grid>
+    </div>
+  </ion-card>
+  </ion-content>
+  

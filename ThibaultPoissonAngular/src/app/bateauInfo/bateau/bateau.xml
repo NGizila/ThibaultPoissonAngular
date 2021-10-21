@@ -1,0 +1,49 @@
+<!--
+ * ***********************************************************
+ * TIG - Le bateau de Thibault.
+ * Copyright (C) 2018 <Binh-Minh.Bui-Xuan@ens-lyon.org>.
+ * GPL version>=3 <http://www.gnu.org/licenses/>.
+ * $Id: BateauThibault/app/src/views/bateau/bateau.xml updated 2020-03-03 buixuan.
+ * *********************************************************** 
+ -->
+<Page loaded="loaded" swipe="swipeListenner">
+  <StackLayout orientation="vertical" >
+
+    <GridLayout row="0" col="0" columns="*" rows="auto,auto,auto,auto,auto" class="infocom" >
+      <Label  row="0" col="0" class="namecom" text="Nos bateaux partenaires" />
+      <Label  row="1" col="0" class="descriptioncom" text="Tous les eaux m&#xE8;nent &#xE0; Thibault." />
+      <Label  row="2" col="0" class="telcom" text="06.63.99.99.78" />
+      <Label  row="3" col="0" class="mailcom" text="lebateaudethibault@gmail.com" />
+      <Label  row="4" col="0" class="facecom" text="www.facebook.com/lebateaudethibault" />
+    </GridLayout>
+  
+    <GridLayout row="1" col="1" columns="auto,*" rows="auto,auto,auto,*,auto" >
+      <Button row="0" col="0" tap="deLaBrise" />
+      <Image  row="0" col="0" tap="deLaBrise" src="res://deLaBrise_icon" />
+      <Label  row="0" col="0" tap="deLaBrise" class="caption" text="De la Brise" />
+     
+      <Button row="0" col="1" tap="saphir" />
+      <Image  row="0" col="1" tap="saphir" src="res://saphir_icon" />
+      <Label  row="0" col="1" tap="saphir" class="caption" text="Saphir" />
+     
+      <Button row="1" col="0" tap="gastMicher" />
+      <Image  row="1" col="0" tap="gastMicher" src="res://gastMicher_icon" />
+      <Label  row="1" col="0" tap="gastMicher" class="caption" text="Gast Micher" />
+     
+      <Button row="1" col="1" tap="aquilon" />
+      <Image  row="1" col="1" tap="aquilon" src="res://aquilon_icon" />
+      <Label  row="1" col="1" tap="aquilon" class="caption" text="Aquilon" />
+     
+      <Button row="2" col="0" tap="contact" />
+      <Image  row="2" col="0" tap="contact" src="res://ancre" />
+      <Label  row="2" col="0" tap="contact" class="caption" text="Contact" />
+     
+      <Button row="2" col="1" tap="contact" />
+      <Image  row="2" col="1" tap="contact" src="res://ancre" />
+      <Label  row="2" col="1" tap="contact" class="caption" text="Contact" />
+      
+      <Label  row="4" colSpan="2" class="bottombar" text="Powered by Bik Inc." />
+    </GridLayout>
+  
+  </StackLayout>
+</Page>

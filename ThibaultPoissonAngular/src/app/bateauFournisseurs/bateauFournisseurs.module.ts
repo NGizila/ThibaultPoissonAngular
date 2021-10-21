@@ -2,15 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
-import { HomePage } from './home.page';
-
-import { HomePageRoutingModule } from './home-routing.module';
-
-
+import { HomePage } from 'src/app/home/home.page';
 import { bateauFournisseurs } from 'src/app/bateauFournisseurs/bateauFournisseurs.page';
-
-
-
+import { HomePageRoutingModule } from 'src/app/home/home-routing.module';
 
 
 @NgModule({
@@ -18,9 +12,8 @@ import { bateauFournisseurs } from 'src/app/bateauFournisseurs/bateauFournisseur
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    bateauFournisseurs
   ],
-  declarations: [HomePage]
+  declarations: [bateauFournisseurs]
 })
-
-export class HomePageModule { }
+export class bateauFournisseurModule {}
