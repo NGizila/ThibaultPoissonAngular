@@ -5,7 +5,9 @@
         "icon": "../assets/recettes/homard_icon.png",
         "recette": {
             "name_recette": "Homard en chaud-froid",
-            "text": "Faites cuire les homards dans de l'eau bouillante avec du thym, du laurier, du sel et du poivre de Cayenne. Laissez cuire 20 minutes. égouttez-les et laissez-les refroidir. Découpez les coffres des homards dans le sens de la longueur.\n Mélangez la mayonnaise avec le cognac, le corail et la ciboulette ciselée.",
+            "text": ["Faites cuire les homards dans de l'eau bouillante avec du thym, du laurier, du sel et du poivre de Cayenne. Laissez cuire 20 minutes.",
+                "égouttez-les et laissez-les refroidir. Découpez les coffres des homards dans le sens de la longueur.",
+                " Mélangez la mayonnaise avec le cognac, le corail et la ciboulette ciselée."],
             "descriptionImage":"../assets/recettes/homard.png",
             "bottombar": "Powered by Bik Inc."
         }

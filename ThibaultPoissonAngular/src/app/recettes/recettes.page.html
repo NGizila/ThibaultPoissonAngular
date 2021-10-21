@@ -10,7 +10,7 @@
   </div>
   <ion-grid>
   <ion-row>
-      <ion-col style="justify-content: space-between;" *ngFor="let item of recettes">
+      <ion-col *ngFor="let item of recettes">
         <ion-button class="row-button" (click)="getRecette(item)">
           <ion-img src={{item.icon}} class="icon"></ion-img>
           <ion-text class="text-name">{{item.name}}</ion-text>
