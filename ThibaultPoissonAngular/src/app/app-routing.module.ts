@@ -52,7 +52,11 @@ const routes: Routes = [
     path: 'description-bateau',
     loadChildren: () => import('./description-bateau/description-bateau.module').then( m => m.DescriptionBateauPageModule)
 
+  },  {
+    path: 'gerant',
+    loadChildren: () => import('./gerant/gerant.module').then( m => m.GerantPageModule)
   },
+
 ];
 
 @NgModule({
