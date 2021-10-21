@@ -25,17 +25,38 @@ export class ProduitsCartPage implements OnInit {
     return quantity*price;
   }
 
+  deleteProduct(item: any, numberOfItems: number){
+    if(item.numberOfItems > numberOfItems){
+      item.numberOfItems = item.numberOfItems - numberOfItems;
+    }else{
+       let index: number = this.cartList.indexOf(item);
+       if(index > -1){
+        this.cartList.splice(index,1);
+       }
+    } 
+    
+
+  }
+
+  addProduct(item: any, numberOfItems: number){
+    item.numberOfItems = item.numberOfItems + numberOfItems;
+  }
+
   async openModal(item: any){
-    // const modal = this.modalController.create({component: ModalpopupPage}).then((modalElement)=>{
-    //   modalElement.present();
-    //   console.log(modalElement);
-    // });
     let modal = await this.modalController.create(
       {component: ModalpopupPage}
     );
     modal.onDidDismiss().then((data)=>{
       console.log(data);
+      if(data.role == "add"){
+        this.addProduct(item,data.data);
+      }
+      else if(data.role == "delete"){
+        this.deleteProduct(item,data.data);
+      }
     });
+
+    console.log(item.numberOfItems);
     return await modal.present();
   }
 

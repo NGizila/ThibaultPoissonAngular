@@ -57,6 +57,10 @@ export class ProduitsPage implements OnInit {
     return counter;
   }
 
+  redirectHome(){
+    return this.router.navigate(['home']);
+  }
+
   redirect(){
     let navigationExtras: NavigationExtras = {
       queryParams: {
