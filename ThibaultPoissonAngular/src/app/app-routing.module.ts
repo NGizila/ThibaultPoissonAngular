@@ -31,7 +31,8 @@ const routes: Routes = [
   {
     path: 'modalpopup',
     loadChildren: () => import('./modalpopup/modalpopup.module').then( m => m.ModalpopupPageModule)
-
+  },
+  {
     path: 'recettes-detail',
     loadChildren: () => import('./recettes-detail/recettes-detail.module').then( m => m.RecettesDetailPageModule)
   },
