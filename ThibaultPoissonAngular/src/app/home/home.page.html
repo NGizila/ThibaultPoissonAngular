@@ -18,17 +18,17 @@
       <ion-col>
         <ion-row *ngFor="let row of row1">
           <ion-col width-50>
-            <ion-button expand="full" size="deault" color="light" (click)="goToPath(row)">{{row}}</ion-button>
+            <ion-button expand="full" size="default" color="light" (click)="goToPath(row)">{{row}}</ion-button>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col width-50 *ngFor="let row of row2">
-            <ion-button expand="full" size="deault" color="light">{{row}}</ion-button>
+            <ion-button expand="full" size="default" color="light" (click)="goToPath(row)">{{row}}</ion-button>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col width-50 *ngFor="let row of row3">
-            <ion-button expand="full" size="deault" color="light">{{row}}</ion-button>
+            <ion-button expand="full" size="default" color="light" (click)="goToPath(row)">{{row}}</ion-button>
           </ion-col>
         </ion-row>
       </ion-col>
