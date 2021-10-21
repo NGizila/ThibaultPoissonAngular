@@ -1,15 +1,21 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>recettes</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
+<ion-content class="background-image">
+  <div class="text-title">
+      <ion-text>Nos recettes</ion-text>
+  </div>
+  <div class="text-description">
+    <ion-text><strong>Toutes les recettes du bateau de Thibault<br/></strong></ion-text>
+    <ion-text>06.63.99.99.78 <br/>
+    lebateaudethibault@gmail.com <br/>
+    www.facebook.com/lebateaudethibault</ion-text>
+  </div>
   <ion-grid>
-    <ion-row>
-      <ion-col>
-        
+  <ion-row>
+      <ion-col style="justify-content: space-between;" *ngFor="let item of recettes">
+        <ion-button class="row-button" (click)="getRecette(item)">
+          <ion-img src={{item.icon}} class="icon"></ion-img>
+          <ion-text class="text-name">{{item.name}}</ion-text>
+        </ion-button>
       </ion-col>
-    </ion-row>
+  </ion-row>
   </ion-grid>
 </ion-content>
