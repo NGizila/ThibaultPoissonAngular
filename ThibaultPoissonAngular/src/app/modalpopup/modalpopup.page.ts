@@ -18,8 +18,8 @@ export class ModalpopupPage implements OnInit {
     this.productNumber = productNumber;
   }
 
-  closeModal(productNumber: number){
-    this.modalController.dismiss(productNumber);
+  closeModal(productNumber: number,role:string){
+    this.modalController.dismiss(productNumber,role);
   }
 
 }

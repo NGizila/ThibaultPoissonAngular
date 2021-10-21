@@ -25,11 +25,18 @@ export class ProduitsCartPage implements OnInit {
     return quantity*price;
   }
 
-  openModal(item: any){
-    this.modalController.create({component: ModalpopupPage}).then((modalElement)=>{
-      console.log(modalElement);
-      modalElement.present();
-    })
+  async openModal(item: any){
+    // const modal = this.modalController.create({component: ModalpopupPage}).then((modalElement)=>{
+    //   modalElement.present();
+    //   console.log(modalElement);
+    // });
+    let modal = await this.modalController.create(
+      {component: ModalpopupPage}
+    );
+    modal.onDidDismiss().then((data)=>{
+      console.log(data);
+    });
+    return await modal.present();
   }
 
 
