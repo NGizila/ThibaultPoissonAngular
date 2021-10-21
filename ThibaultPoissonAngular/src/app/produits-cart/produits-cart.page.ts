@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { ModalController } from '@ionic/angular';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AlertController, ModalController } from '@ionic/angular';
 import { ModalpopupPage } from '../modalpopup/modalpopup.page';
 
 @Component({
@@ -10,9 +10,8 @@ import { ModalpopupPage } from '../modalpopup/modalpopup.page';
 })
 export class ProduitsCartPage implements OnInit {
   private cartList: any;
-  private test: number;
 
-  constructor(private activatedRoute: ActivatedRoute, private modalController: ModalController) { 
+  constructor(private router: Router, private alertController: AlertController, private activatedRoute: ActivatedRoute, private modalController: ModalController) { 
     this.activatedRoute.queryParams.subscribe(params => {
       if (params && params.special) {
         this.cartList = JSON.parse(params.special);
@@ -20,9 +19,49 @@ export class ProduitsCartPage implements OnInit {
       }
     });
   }
+  
 
-  totalPrice(quantity: number,price: number){
+  itemPrice(quantity: number,price: number){
     return quantity*price;
+  }
+
+  total(){
+    let total = 0;
+    this.cartList.map(value =>{
+      total = total + value.numberOfItems*value.price;
+    });
+    return total;
+  }
+
+  redirectHome(){
+    this.router.navigate(['home']);
+  }
+  
+  async validateOrder(total :number) {
+    const alert = await this.alertController.create({
+      cssClass: 'global.scss',
+      header: 'Envoyer votre command?',
+      message: 'Envoyer votre command de ' + total + ' € à Thibault?',
+      buttons: [
+        {
+          text: 'Non',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: () => {
+            console.log('Confirm Cancel');
+          }
+        }, {
+          text: 'Oui',
+          handler: () => {
+            this.cartList = [];
+            this.redirectHome();
+            console.log('Confirm Okay');
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 
   deleteProduct(item: any, numberOfItems: number){
