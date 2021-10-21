@@ -1,0 +1,32 @@
+<ion-content class="background-image">
+  <div class="text-title">
+    <ion-text>Restaurants partenaires </ion-text>
+  </div>
+  <div class="text-description">
+    <ion-text><strong>Tout les restaurants partenaires avec le bateau de Thibault<br/></strong></ion-text>
+    <ion-text> 06.63.99.99.78<br/></ion-text>
+    <ion-text> lebateaudethibault@gmail.com <br/></ion-text>
+    <ion-text> www.facebook.com/lebateaudethibault<br/></ion-text>
+  </div>
+  <div>
+  <ion-grid>
+      <ion-col>
+        <ion-row>
+          <ion-col width-50 *ngFor="let row of row1">
+            <ion-button class="button-home"(click)="goToRestaurantDescription(row)">{{row}}</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col width-50 *ngFor="let row of row2">
+            <ion-button class="button-home" (click)="goToRestaurantDescription(row)">{{row}}</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col width-50 *ngFor="let row of row3">
+            <ion-button class="button-home" (click)="goToRestaurantDescription(row)">{{row}}</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+  </ion-grid>
+  </div>
+</ion-content>
