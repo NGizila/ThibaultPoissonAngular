@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'produits-cart',
     loadChildren: () => import('./produits-cart/produits-cart.module').then( m => m.ProduitsCartPageModule)
   },
+  {
+    path: 'modalpopup',
+    loadChildren: () => import('./modalpopup/modalpopup.module').then( m => m.ModalpopupPageModule)
+  },
 ];
 
 @NgModule({

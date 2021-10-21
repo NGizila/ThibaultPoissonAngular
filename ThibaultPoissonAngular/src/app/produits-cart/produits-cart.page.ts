@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ModalController } from '@ionic/angular';
+import { ModalpopupPage } from '../modalpopup/modalpopup.page';
 
 @Component({
   selector: 'app-produits-cart',
@@ -8,8 +10,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProduitsCartPage implements OnInit {
   private cartList: any;
+  private test: number;
 
-  constructor(private activatedRoute: ActivatedRoute) { 
+  constructor(private activatedRoute: ActivatedRoute, private modalController: ModalController) { 
     this.activatedRoute.queryParams.subscribe(params => {
       if (params && params.special) {
         this.cartList = JSON.parse(params.special);
@@ -21,6 +24,14 @@ export class ProduitsCartPage implements OnInit {
   totalPrice(quantity: number,price: number){
     return quantity*price;
   }
+
+  openModal(item: any){
+    this.modalController.create({component: ModalpopupPage}).then((modalElement)=>{
+      console.log(modalElement);
+      modalElement.present();
+    })
+  }
+
 
   ngOnInit() { }
 

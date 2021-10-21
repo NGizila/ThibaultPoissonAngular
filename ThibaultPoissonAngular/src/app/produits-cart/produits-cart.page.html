@@ -4,7 +4,7 @@
       <button ion-button icon-only menuToggle>
         <ion-icon name="home" class="home-icon" start></ion-icon>
       </button>
-      <ion-title>Cart</ion-title>
+      <ion-title>Modifiez la quantité en tappant sur chaque produit</ion-title>
       <button ion-button icon-only menuToggle (click)="redirect()">
         <ion-icon name="cart" class="cart-icon" end></ion-icon>
       </button>
@@ -13,8 +13,9 @@
 </ion-header>
 
 <ion-content>
-  <ion-list  *ngFor="let item of cartList | keyvalue">
-    <ion-item>
+  <ion-list>
+    <ion-item button *ngFor="let item of cartList | keyvalue" (click)="openModal(item.value.numberOfItems)">
+      <ion-img style="width: 5%" src="assets/icon/poulpe.png" item-start></ion-img>
       <ion-label item-start>{{item.value.name}}</ion-label>
       <ion-label item-end> {{item.value.numberOfItems}} X {{item.value.price}} $</ion-label>
       <ion-label item-end> {{totalPrice(item.value.numberOfItems,item.value.price)}} $</ion-label>
