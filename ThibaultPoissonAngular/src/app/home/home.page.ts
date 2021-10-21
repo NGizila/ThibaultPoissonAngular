@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 export class HomePage {
 
   row1: string[] = ['Produits'];
+  row2: string[] = ['Bateau','Restaurant'];
+  row3: string[] = ['Recettes','Contacte'];
   row2: string[] = ['Bateaux','restaurants'];
   row3: string[] = ['Promotion','Contacte'];
   fullPath: string = '';
