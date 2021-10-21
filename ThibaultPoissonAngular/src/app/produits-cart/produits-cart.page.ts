@@ -18,6 +18,10 @@ export class ProduitsCartPage implements OnInit {
     });
   }
 
+  totalPrice(quantity: number,price: number){
+    return quantity*price;
+  }
+
   ngOnInit() { }
 
 }
