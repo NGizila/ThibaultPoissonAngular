@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
-import { ModalController } from '@ionic/angular';
 import * as JSONdata from "../../constants/produits.json";
-import { Cart } from '../models/Cart';
 
 @Component({
   selector: 'app-produits',
@@ -10,66 +8,38 @@ import { Cart } from '../models/Cart';
   styleUrls: ['./produits.page.scss'],
 })
 export class ProduitsPage implements OnInit {
-  
-  constructor(private router: Router,private modalCtrl: ModalController) { }
-  productList: any;
-  cart: Cart = new Cart();
-  itemCounter = 0;
+  productList =  [];
   itemData = [];
+  productsCategories = ['Poissons','Coquillages','Crustaces','Promotions'];
 
-  manageItems(item: any){
-    let counter = 0;
-    let id_exists = false;
-    let simplecart: Cart = new Cart();
+  constructor(private router: Router) { }
 
-    if(this.itemData.length < 1){
-      this.cart.id = item.id;
-      this.cart.name = item.name;
-      this.cart.numberOfItems = 1;
-      this.cart.price = item.price;
-      this.itemData.push(this.cart);
-    }
-    else{
-      this.itemData.forEach(element => {
-        if(item.id == element.id){
-          id_exists = true;
-          counter = element.numberOfItems + 1;
-          element.numberOfItems = element.numberOfItems +1;
-        }});
-  
-      if(id_exists==false){
-          simplecart.id = item.id;
-          simplecart.name = item.name;
-          simplecart.numberOfItems = 1;
-          simplecart.price = item.price;
-          this.itemData.push(simplecart);
-        }
-    }
-  }
-  
-  getCounter(item:number){
-    let counter = 0;
-    this.itemData.forEach(element => {
-      if(item == element.id){
-        counter = element.numberOfItems;
-      }
-    })
-    return counter;
-  }
-
-  redirectHome(){
-    return this.router.navigate(['home']);
-  }
-
-  redirect(){
+  redirect(data: any){
     let navigationExtras: NavigationExtras = {
       queryParams: {
-        special: JSON.stringify(this.itemData)
+        special: JSON.stringify(data)
       }
     };
-    this.router.navigate(['produits-cart'], navigationExtras); //,{state:{data:{...item}}}
+    this.router.navigate(['produits-list'],navigationExtras);
   }
 
+  
+  filterData(name: string){
+    let data: any;
+    if(name.toLowerCase() == 'poissons'){
+      data = Object.values(this.productList).filter(value=>value.category==0);
+    }
+    else if(name.toLowerCase() == 'coquillages'){
+      data = Object.values(this.productList).filter(value=>value.category==1);
+    }
+    else if(name.toLowerCase() == 'crustaces'){
+      data = Object.values(this.productList).filter(value=>value.category==2);
+    } else{
+      data = Object.values(this.productList).filter(value=>value.discount!=0);
+    }
+    this.redirect(data);
+  }
+  
   ngOnInit() {
     this.productList = JSONdata;
   }

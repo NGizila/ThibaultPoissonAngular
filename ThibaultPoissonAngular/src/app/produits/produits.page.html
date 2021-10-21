@@ -14,11 +14,9 @@
 <ion-content padding>
   <ion-title>Choissiez vos produits</ion-title>
   <ion-list>
-    <ion-item *ngFor="let item of productList | keyvalue " button (click)="manageItems(item.value)">
-        <ion-img *ngIf="item.value.name" style="width: 5%" src="assets/icon/poulpe.png" item-start></ion-img>
-        <ion-label *ngIf="item.value.name"  item-end> {{item.value.name}} </ion-label>
-        <ion-label *ngIf="item.value.name"  item-end> Nombre: {{getCounter(item.value.id)}} </ion-label>
-        <ion-label *ngIf="item.value.name"  item-end> Prix: {{item.value.price}} </ion-label>
+    <ion-item *ngFor="let item of productsCategories | keyvalue" button (click)="filterData(item.value)">
+        <ion-img *ngIf="item" style="width: 5%" src="assets/icon/poulpe.png" item-start></ion-img>
+        <ion-label *ngIf="item"  item-end> {{item.value}} </ion-label>
      </ion-item>
   </ion-list>
 </ion-content>
