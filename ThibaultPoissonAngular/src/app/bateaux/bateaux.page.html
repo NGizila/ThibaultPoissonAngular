@@ -1,14 +1,13 @@
-
 <ion-content [fullscreen]="true">
   <ion-header [translucent]="true">
     <ion-toolbar>
       <ion-title>
-        Restaurants
+        Nos bateaux partenaires
       </ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-title>Restaurants partenaires </ion-title>
-  <ion-text> Tout les restaurants partenaires avec le bateau de Thibault</ion-text>
+  <ion-title>Nos bateaux partenaires </ion-title>
+  <ion-text> Tout les eaux mènent a Thibault</ion-text>
   <ion-text> 06.63.99.99.78 </ion-text>
   <ion-text> lebateaudethibault@gmail.com </ion-text>
   <ion-text> www.facebook.com/lebateaudethibault</ion-text>
@@ -16,17 +15,17 @@
     <ion-col>
       <ion-row>
         <ion-col width-50 *ngFor="let row of row1">
-          <ion-button expand="full" size="default" color="light" (click)="goToRestaurantDescription(row)">{{row}}</ion-button>
+          <ion-button expand="full" size="default" color="light" (click)="goToBateauDescription(row)">{{row}}</ion-button>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col width-50 *ngFor="let row of row2">
-          <ion-button expand="full" size="default" color="light" (click)="goToRestaurantDescription(row)">{{row}}</ion-button>
+          <ion-button expand="full" size="default" color="light" (click)="goToBateauDescription(row)">{{row}}</ion-button>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col width-50 *ngFor="let row of row3">
-          <ion-button expand="full" size="default" color="light" (click)="goToRestaurantDescription(row)">{{row}}</ion-button>
+          <ion-button expand="full" size="default" color="light" (click)="goToBateauDescription(row)">{{row}}</ion-button>
         </ion-col>
       </ion-row>
     </ion-col>

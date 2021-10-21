@@ -18,7 +18,15 @@ const routes: Routes = [
   {
     path: 'description-restaurant',
     loadChildren: () => import('./description-restaurant/description-restaurant.module').then( m => m.DescriptionRestaurantPageModule)
+  },  {
+    path: 'bateaux',
+    loadChildren: () => import('./bateaux/bateaux.module').then( m => m.BateauxPageModule)
   },
+  {
+    path: 'description-bateau',
+    loadChildren: () => import('./description-bateau/description-bateau.module').then( m => m.DescriptionBateauPageModule)
+  },
+
 
 
 ];
