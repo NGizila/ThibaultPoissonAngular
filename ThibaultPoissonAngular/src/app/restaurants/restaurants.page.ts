@@ -20,7 +20,7 @@ export class RestaurantsPage implements OnInit {
   {
     if (value === 'Devenez partenaire!')
     {
-      this.router.navigate(['home']);
+      this.router.navigate(['gerant']);
     }
     else
     {
