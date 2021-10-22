@@ -93,8 +93,8 @@ export class ProduitsCartPage implements OnInit {
   async validateOrder(total :number) {
     const alert = await this.alertController.create({
       cssClass: 'global.scss',
-      header: 'Envoyer votre command?',
-      message: 'Envoyer votre command de ' + total + ' € à Thibault?',
+      header: 'Envoyer votre commande?',
+      message: 'Envoyer votre commande de ' + total + ' € à Thibault?',
       buttons: [
         {
           text: 'Non',

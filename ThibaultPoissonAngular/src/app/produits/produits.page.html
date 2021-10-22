@@ -12,7 +12,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content padding class="background-image">
-  <ion-title>Choissiez vos produits</ion-title>
+  <ion-title>Choissisez vos produits</ion-title>
   <ion-list>
     <ion-item *ngFor="let item of productsCategories | keyvalue" button (click)="filterData(item.value)">
         <ion-img *ngIf="item" style="width: 5%" src="assets/produits-home/{{item.value}}.png" item-start></ion-img>
