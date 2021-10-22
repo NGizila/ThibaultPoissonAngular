@@ -20,7 +20,7 @@ export class BateauxPage implements OnInit {
   {
     if (value === 'Contact')
     {
-      this.router.navigate(['home']);
+      this.router.navigate(['gerant']);
     }
     else
     {
