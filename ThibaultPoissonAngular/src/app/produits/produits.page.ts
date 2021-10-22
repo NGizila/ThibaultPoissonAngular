@@ -23,6 +23,10 @@ export class ProduitsPage implements OnInit {
     this.router.navigate(['produits-list'],navigationExtras);
   }
 
+  redirectHome(){
+    this.router.navigate(['home']);
+  }
+
   
   filterData(name: string){
     let data: any;
