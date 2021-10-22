@@ -29,11 +29,11 @@ ion-content {
     background-color:'rgba(136, 128, 128, 0.5)';
   }
 
-
-.item-block {
-    height: auto;
+ion-list{
+    --ion-background-color:rgba(136, 128, 128, 0.205);
 }
 
-.item-ios.item-block .item-inner {
-    height: auto;
+ion-item{
+    --ion-background-color:rgba(136, 128, 128, 0);
+    --border-color: rgb(161, 158, 158);
 }
