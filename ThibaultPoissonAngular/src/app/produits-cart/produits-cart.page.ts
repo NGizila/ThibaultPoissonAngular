@@ -15,9 +15,12 @@ export class ProduitsCartPage implements OnInit {
     this.activatedRoute.queryParams.subscribe(params => {
       if (params && params.special) {
         this.cartList = JSON.parse(params.special);
-        console.log(this.cartList);
       }
     });
+  }
+
+  redirectHome(){
+    this.router.navigate(['home']);
   }
   
 
@@ -33,9 +36,59 @@ export class ProduitsCartPage implements OnInit {
     return total;
   }
 
-  redirectHome(){
-    this.router.navigate(['home']);
+  async pickupPoint(total :number) {
+    const alert = await this.alertController.create({
+      cssClass: 'global.scss',
+      header: 'Choisissez le point de relais',  
+      inputs: [
+        {
+          name: 'Bistrot des Gascons',
+          type: 'radio',
+          label: 'Bistrot des Gascons',
+          value: 'Bistrot des Gascons',
+          checked: true
+        },
+        {
+          name: 'Café des Phares',
+          type: 'radio',
+          label: 'Café des Phares',
+          value: 'Café des Phares',
+        },
+        {
+          name: 'Le Vert Tulipe',
+          type: 'radio',
+          label: 'Le Vert Tulipe',
+          value: 'Le Vert Tulipe',
+        },
+        {
+          name: 'Rouche qui dit Oui',
+          type: 'radio',
+          label: 'Rouche qui dit Oui',
+          value: 'Rouche qui dit Oui',
+        },
+      ],
+      buttons: [
+        {
+          text: 'Non',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: () => {
+            console.log('Confirm Cancel');
+          }
+        }, {
+          text: 'Oui',
+          handler: () => {
+            console.log('Confirm Okay');
+            this.validateOrder(total);
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
+
+
   
   async validateOrder(total :number) {
     const alert = await this.alertController.create({
@@ -54,7 +107,7 @@ export class ProduitsCartPage implements OnInit {
           text: 'Oui',
           handler: () => {
             this.cartList = [];
-            this.redirectHome();
+            this.router.navigate(['home']);
             console.log('Confirm Okay');
           }
         }
